@@ -7,6 +7,7 @@ import {useNavigate} from "react-router";
 import {generateUUID} from "~/lib/utils";
 import {prepareInstructions} from "../../constants";
 
+
 const Upload = () => {
     const { auth, isLoading, fs, ai, kv } = usePuterStore();
     const navigate = useNavigate();
