@@ -32,6 +32,7 @@ export default function Home() {
           JSON.parse(resume.value) as Resume
       ))
 
+      console.log("parsedResumes", parsedResumes);
       setResumes(parsedResumes || []);
       setLoadingResumes(false);
     }
@@ -56,7 +57,7 @@ export default function Home() {
           </div>
       )}
 
-    {loadingResumes && (
+    {!loadingResumes && resumes.length > 0 && (
         <div className="resumes-section">
           {resumes.map((resume, index) => (
               <ResumeCard key={resume.id} resume={resume} />
